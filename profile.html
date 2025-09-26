@@ -1,1 +1,100 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Profil ikky</title>
+  <style>
+    :root{
+      --bg:#f7fafc;
+      --card:#ffffff;
+      --accent:#2563eb;
+      --muted:#6b7280;
+      --radius:12px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#111}
+    .container{max-width:900px;margin:36px auto;padding:20px}
+    header{display:flex;align-items:center;gap:16px}
+    .avatar{width:110px;height:110px;border-radius:14px;flex-shrink:0;overflow:hidden;background:linear-gradient(135deg,#e2e8f0,#c7d2fe);display:grid;place-items:center;color:#fff;font-weight:700}
+    h1{margin:0;font-size:1.6rem}
+    p.lead{margin:6px 0;color:var(--muted)}
+    .card{background:var(--card);border-radius:var(--radius);padding:18px;margin-top:18px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+    .grid{display:grid;grid-template-columns:1fr 280px;gap:18px}
+    .about{line-height:1.6}
+    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .skill{padding:6px 10px;border-radius:999px;background:#eef2ff;font-size:0.9rem;color:#1e293b}
+    .contact form{display:flex;flex-direction:column;gap:8px}
+    input,textarea{padding:10px;border-radius:8px;border:1px solid #e6e9ef;font-size:0.95rem}
+    button.primary{background:var(--accent);color:#fff;border:0;padding:10px 14px;border-radius:10px;font-weight:600;cursor:pointer}
+    footer{margin-top:20px;color:var(--muted);font-size:0.9rem}
+    @media (max-width:800px){
+      .grid{grid-template-columns:1fr}
+      .avatar{width:92px;height:92px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="avatar">RZ</div>
+      <div>
+        <h1>M Rizky Fadilah</h1>
+        <p class="lead">Pelajar / Pengembang web pemula — suka membuat halaman sederhana dan belajar coding.</p>
+        <div style="margin-top:8px"><strong>Email:</strong> rizky262482@gmail.com &nbsp;•&nbsp; <strong>Lokasi:</strong> bogor, Indonesia</div>
+      </div>
+    </header>
+
+    <div class="card grid">
+      <main>
+        <section class="about">
+          <h2>Tentang Saya</h2>
+          <p>Halo! Saya Rizky, seorang pelajar yang sedang belajar pengembangan web. Saya tertarik pada HTML, CSS, dan sedikit JavaScript. Saya menikmati membuat desain sederhana yang bersih dan mudah digunakan.</p>
+
+          <h3 style="margin-top:14px">Keahlian</h3>
+          <div class="skills">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript dasar</div>
+            <div class="skill">Responsive design</div>
+          </div>
+
+          <h3 style="margin-top:14px">Pengalaman Singkat</h3>
+          <ul>
+            <li>Membuat beberapa proyek halaman statis untuk tugas sekolah.</li>
+            <li>mempelajari css,java</li>
+          </ul>
+        </section>
+
+      <aside>
+        <div class="card">
+          <h3>Hubungi Saya</h3>
+          <div class="contact">
+            <form onsubmit="event.preventDefault(); alert('Terima kasih! Pesan tidak dikirim karena ini demo.');">
+              <input type="text" placeholder="Nama" required />
+              <input type="email" placeholder="Email" required />
+              <textarea rows="4" placeholder="Pesan"></textarea>
+              <button class="primary" type="submit">Kirim</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h4>Media Sosial</h4>
+          <p class="lead" style="margin:6px 0">Tambahkan link ke profil GitHub, Instagram, atau LinkedIn Anda.</p>
+          <ul>
+            <li>Instagram: @kylove_clix</li>
+          </ul>
+         <button onclick="window.open('index.html')">halaman utama</button>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      © 2025 M Rizky Fadilah — Dibuat dengan HTML &amp; CSS sederhana.
+    </footer>
+  </div>
+</body>
+</html>
 

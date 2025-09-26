@@ -1,99 +1,142 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Website ikky</title>
-    <style>
-        :root{
+  <meta charset="utf-8" />
+  <title>game ikky</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    :root{
       --bg:#0f1724;
       --card:#0b1220;
       --accent:#06b6d4;
       --muted:#94a3b8;
       color-scheme: dark;
     }
-        body {
-           --bg:#0f1724;
-      --card:#0b1220;
-      --accent:#06b6d4;
-      --muted:#94a3b8;
-      color-scheme: dark;
-        }
-        header {
-            background: #333;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-        nav {
-            background: #444;
-            padding: 5px;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 10px;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        section {
-            padding: 15px;
-        }
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
-        }
-        .container{
-      max-width:1200px;
+    body{
+      margin:0;
+      font-family: Inter, system-ui, Arial, sans-serif;
+      background:linear-gradient(180deg,#071027 0%, #071a2b 100%);
+      color:#e6eef6;
+      padding:28px;
+      display:flex;
+      justify-content:center;
+    }
+    .container{
+      max-width:900px;
       width:100%;
       background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.12));
       border-radius:12px;
       padding:20px;
       box-shadow:0 8px 30px rgba(2,6,23,0.6);
       border:1px solid rgba(255,255,255,0.03);
-    
     }
-   .neon {
-    font-size:6rem;
-    text-align: center;
-    color:#fff;
-    text-transform:uppercase;
-    letter-spacing:6px;
-    text-shadow:
-      0 0 6px rgba(255,255,255,0.9),
-      0 0 20px #ff3cac,
-      0 0 40px #ff3cac,
-      0 0 80px #3a00ff;
-  }
-    </style>
+    header{display:flex;gap:18px;align-items:center}
+    .thumb{
+      width:140px;height:140px;border-radius:10px;overflow:hidden;flex:0 0 140px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.6);
+      background:linear-gradient(90deg,#052a3a,#0b1530);
+      display:flex;align-items:center;justify-content:center;
+    }
+    .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    h1{margin:0;font-size:24px}
+    p.lead{color:var(--muted);margin:6px 0 14px 0}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:14px}
+    .card{background:var(--card);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+    .section h3{margin:0 0 8px 0}
+    ul{padding-left:18px;margin:6px 0}
+    .skill{margin-bottom:8px}
+    .badge{display:inline-block;background:rgba(6,182,212,0.12);color:var(--accent);padding:4px 8px;border-radius:999px;font-size:12px;margin-right:6px}
+    .small{font-size:13px;color:var(--muted)}
+    footer{margin-top:14px;font-size:12px;color:var(--muted)}
+    @media (max-width:880px){
+      .grid{grid-template-columns:1fr; }
+      .thumb{width:110px;height:110px}
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <br>
-        <h1 class="neon">WEBSITE IKKY</h1>
-        <hr>
-    <a href="about.html">ABOUT|</a>
-     <a href="profile.html">PROFILE|</a>
-      <a href="game.html">MY GAME FAVORIT|</a>
-       <a href="mbub.html">MY BEATIFUL</a>
-      
-    
-<header>
+  <div class="container">
+    <header>
+      <div class="thumb">
+        <!-- Ganti src dengan gambar hero Gloo yang valid -->
+        <img src="glo.jpg" alt="Gloo splash art">
+      </div>
+      <div>
+        <h1>Gloo — Swamp Spirit (Tank)</h1>
+        <p class="lead">Hero tank spesialis regenerasi dan crowd control. Kuat di lane EXP / roaming, bisa merekat pada hero musuh dan menyalurkan tekanan.</p>
+        <div class="small">
+          <span class="badge">Role: Tank</span>
+          <span class="badge">Specialty: Regen / Control</span>
+          <span style="margin-left:8px">Rilis: 2021</span>
+        </div>
+      </div>
+    </header>
 
- <section>
-        <h2>Tentang Website</h2>
-        <hr>
-        <p>Website ini di buat hanya untuk pelatihan saya dalam penggunaan java,css,html,yang bersifat pemula</p>
-        
-        <h3>spek laptop axio hype 7 amd</h3>
-        <img src="jkt.png"width="400"height="200">
+    <div class="grid">
+      <div>
+        <section class="card section">
+          <h3>Ringkasan Kemampuan</h3>
+          <div class="skill">
+            <strong>1. Passive — (Goo / Split)</strong>
+            <p class="small">Gloo dapat membelah tubuhnya menjadi potongan (goos) yang memberikan regenerasi, movement speed ekstra, dan memberikan damage area ketika menyentuh musuh.</p>
+          </div>
+          <div class="skill">
+            <strong>2. Skill 1 — (Slam / Damage AoE)</strong>
+            <p class="small">Serangan area yang meninggalkan bekas goo yang meledak setelah beberapa waktu atau saat Gloo menyentuhnya.</p>
+          </div>
+          <div class="skill">
+            <strong>3. Skill 2 — (Pass / Hook-Like)</strong>
+            <p class="small">Menjangkau musuh, memberikan efek immobilize singkat jika mengenai goo atau target tertentu.</p>
+          </div>
+          <div class="skill">
+            <strong>4. Ultimate — (Attach / Stick)</strong>
+            <p class="small">Kemampuan khas: Gloo dapat menempel (attach) pada hero lawan, bergerak bersama, dan menggunakan skill dari posisi terikat untuk mengendalikan target.</p>
+          </div>
         </section>
-        <hr>
-</header>
 
-    
+        <section class="card section" style="margin-top:12px">
+          <h3>Rekomendasi Build Singkat</h3>
+          <ul>
+            <li>Boots (mis. CDR Boots atau lainnya sesuai kebutuhan)</li>
+            <li>Glowing Wand — sinergi burn dengan damage berkelanjutan</li>
+            <li>Antique Cuirass / Oracle — untuk durability dan efek regen</li>
+            <li>Athena's Shield atau Radiant Armor — lawan mage/aoe</li>
+            <li>Item situasional: Immortality, Dominance Ice</li>
+          </ul>
+          <p class="small">(Prioritas: sustain & item yang mengurangi efek penyembuhan musuh jika lawan regen).</p>
+        </section>
+
+        <section class="card section" style="margin-top:12px">
+          <h3>Tips Bermain</h3>
+          <ul>
+            <li>Gunakan split passive untuk mengganggu lane dan memaksimalkan regen.</li>
+            <li>Attach (ultimate) pada target squishy yang terisolasi untuk menghambat dan menghabisi mereka bersama tim.</li>
+            <li>Prioritaskan Glowing Wand bila kamu ingin pressure lebih di early.</li>
+            <li>Koordinasi dengan tim sebelum menempel ke musuh — Gloo paling kuat saat ada follow-up dari rekan tim.</li>
+          </ul>
+        </section>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3>Counter & Lawan</h3>
+          <ul>
+            <li>Hero dengan displacement / stun berkepanjangan dapat memutuskan posisinya.</li>
+            <li>Hero yang punya burst tinggi (marksman/mage) yang bisa menghukum posisi Gloo saat terpisah.</li>
+            <li>Objek dan items yang mengurangi regen (mis. item anti-heal) efektif melawan Gloo.</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3>Video & Sumber</h3>
+          <p class="small">Cari hero spotlight dan guide untuk kombinasi skill & combo yang optimal.</p>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <div class="small">Catatan: Deskripsi ini dirangkum untuk referensi singkat. Untuk detail angka (damage, cooldown), cek patch notes atau guide hero terbaru.</div>
+    </footer>
+  </div>
 </body>
 </html>
-

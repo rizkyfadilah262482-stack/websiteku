@@ -1,1 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Profil Keren</title>
+
+  <!-- Google Font (ubah sesuai selera) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg1: #0f172a;
+      --bg2: #0b1020;
+      --accent-a: #7c3aed; /* ungu */
+      --accent-b: #06b6d4; /* cyan */
+      --glass: rgba(255,255,255,0.06);
+      --glass-2: rgba(255,255,255,0.03);
+      --text: #e6eef8;
+      --muted: #bcd3ea;
+    }
+
+    /* Reset ringan */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+
+    body{
+      font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.12), transparent),
+                  radial-gradient(900px 500px at 90% 90%, rgba(6,182,212,0.08), transparent),
+                  linear-gradient(180deg, var(--bg1), var(--bg2));
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+
+    /* Kontainer tengah */
+    .about-card{
+      width:min(960px, 94vw);
+      display:grid;
+      grid-template-columns: 260px 1fr;
+      gap:28px;
+      align-items:center;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:20px;
+      padding:28px;
+      box-shadow: 0 10px 30px rgba(5,10,20,0.6);
+      border: 1px solid rgba(255,255,255,0.04);
+      backdrop-filter: blur(8px) saturate(120%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Hiasan gradasi di pojok */
+    .about-card::before{
+      content:"";
+      position:absolute;
+      right:-120px;
+      top:-120px;
+      width:380px;height:380px;
+      background: conic-gradient(from 200deg at 50% 50%, rgba(124,58,237,0.08), rgba(6,182,212,0.06), rgba(124,58,237,0.08));
+      filter: blur(40px);
+      transform: rotate(20deg);
+      pointer-events:none;
+    }
+
+    /* Foto & nama kolom kiri */
+    .profile {
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+      align-items:center;
+      text-align:center;
+      padding:8px;
+    }
+
+    .avatar{
+      width:160px;
+      height:160px;
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow: 0 8px 24px rgba(7,10,20,0.6);
+      border: 1px solid rgba(255,255,255,0.06);
+      flex-shrink:0;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      display:grid;
+      place-items:center;
+    }
+    .avatar img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .name{
+      font-size:20px;
+      font-weight:800;
+      letter-spacing: -0.5px;
+    }
+    .role{
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    /* Konten kanan */
+    .content{
+      padding:8px 4px;
+    }
+
+    .headline{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:6px;
+    }
+
+    .fancy-title{
+      font-size:28px;
+      font-weight:900;
+      line-height:1;
+      background: linear-gradient(90deg, var(--accent-a), var(--accent-b));
+      letter-spacing:-0.5px;
+    }
+
+    .tag{
+      font-size:12px;
+      color:var(--muted);
+      background: var(--glass);
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.03);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    }
+
+    p.lead{
+      margin-top:12px;
+      color:var(--muted);
+      line-height:1.6;
+      font-size:15px;
+    }
+
+    .meta{
+      margin-top:18px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .meta .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:12px;
+      padding:8px 12px;
+      font-size:13px;
+      color:var(--muted);
+      border:1px solid rgba(255,255,255,0.03);
+      box-shadow: 0 6px 18px rgba(3,6,12,0.45);
+    }
+
+    .actions{
+      margin-top:20px;
+      display:flex;
+      gap:12px;
+    }
+
+    .btn{
+      cursor:pointer;
+      user-select:none;
+      font-weight:600;
+      padding:10px 16px;
+      border-radius:12px;
+      border: none;
+      min-width:120px;
+      text-align:center;
+      font-size:14px;
+      transition: transform .16s ease, box-shadow .16s ease;
+      box-shadow: 0 8px 20px rgba(2,6,15,0.45);
+      background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      color:var(--text);
+      border:1px solid rgba(255,255,255,0.04);
+      backdrop-filter: blur(6px);
+    }
+
+    .btn:active{ transform: translateY(2px); }
+
+    .btn-primary{
+      background: linear-gradient(90deg, var(--accent-a), var(--accent-b));
+      color: white;
+      box-shadow: 0 8px 30px rgba(12,10,30,0.45);
+    }
+
+    .btn-outline{
+      background: transparent;
+      border: 1px solid rgba(124,58,237,0.18);
+      color: var(--muted);
+    }
+
+    /* Responsive: tumpuk kolom */
+    @media (max-width:760px){
+      .about-card{ grid-template-columns: 1fr; gap:18px; padding:18px; }
+      .avatar{ width:130px;height:130px; }
+      .fancy-title{ font-size:22px; }
+    }
+
+    /* Animasi halus untuk teks judul */
+    @keyframes floaty {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+      100% { transform: translateY(0px); }
+    }
+    .fancy-title{ animation: floaty 6s ease-in-out infinite; }
+
+  </style>
+</head>
+<body>
+
+  <main class="about-card" role="region" aria-label="About profile">
+    <!-- Kiri: foto & nama -->
+    <aside class="profile">
+      <figure class="avatar" aria-hidden="true">
+        <!-- Ganti src ke foto kamu -->
+        <img src="ganteng.jpeg" alt="Foto Profil">
+      </figure>
+
+      <div>
+        <div class="name">M Rizky Fadilah</div>
+        <div class="role">Pembisnis • Kreatif</div>
+      </div>
+
+      <div style="display:flex;gap:8px;">
+        <div class="tag">UI/UX</div>
+        <div class="tag">HTML • CSS • JS</div>
+      </div>
+    </aside>
+
+    <!-- Kanan: konten about -->
+    <section class="content">
+      <header class="headline">
+        <h1 class="fancy-title">Tentang Saya</h1>
+        <div class="tag" title="Nama Sekolah">SMK TRIDHARMA 2 KOTA BOGOR</div>
+      </header>
+
+      <p class="lead">
+        Nama saya Muhammad Rizky Fadilah,kelas 11 jurusan rekayasa perangkat lunak,saya mempunyai hobby mengamati pemerograman,memainkan alat musik,dan olahraga futsal.saya lahir dijakarta
+        18 maret 2009,cita-cita saya menjadi Ahli IT alamat saya jala raya bojong gede kabupaten bogor
+      </p>
+
+      <div class="meta" aria-hidden="false">
+        <div class="chip">Football</div>
+        <div class="chip">⚡ Performance-minded</div>
+        <div class="chip">🧪 Eksperimen: CSS art & animasi</div>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" onclick="window.location.href='https://wa.me/6283863767644'">Hubungi Saya</button>
+        <button class="btn btn-outline" onclick="window.open('https://instagram.com/kylove_clix')">instagram</button>
+        <button class="btn btn-outline" onclick="window.open('index.html')">kembali</button>
+      </div>
+
+      <!-- Konten tambahan: bisa disembunyikan / diperluas -->
+      <div id="contac" style="margin-top:18px;color:var(--muted);font-size:13px;">
+        Email: <a href="rizkyfadilah262482@gmail.com" style="color:inherit;text-decoration:underline;">rizkyfadilah262482@gmail.com</a>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
 
